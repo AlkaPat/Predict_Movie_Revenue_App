@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Site Properties -->
+    <title>Movie Revenue Prediction</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/site.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/container.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/grid.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/image.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/menu.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/divider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/list.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/segment.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/dropdown.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/icon.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/semantic.min.css') }}">
+
+    <script src="{{ url_for('static', filename='dist/components/form.js') }}"></script>
+    <script src="{{ url_for('static', filename='dist/components/transition.js') }}"></script>
+
+    <style type="text/css">
+        body {
+        background-color: #FFFFFF;
+        }
+        .ui.menu .item img.logo {
+        margin-right: 1.5em;
+        }
+        .main.container {
+        margin-top: 7em;
+        }
+        .wireframe {
+        margin-top: 2em;
+        }
+        .ui.footer.segment {
+        margin: 5em 0em 0em;
+        padding: 1em 0em;
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="ui fixed inverted menu">
+    <div class="ui container">
+        <a href="/" class="header item">
+            <!--<img class="logo" src="assets/images/logo.png">-->
+           Movie Revenue Prediction
+        </a>
+        <a href="/" class="item">Home</a>
+    </div>
+</div>
+
+<div class="ui main text container">
+
+    <h1 class="ui header">Online Movie Revenue Prediction Tool</h1>
+
+    <form class="ui form" action="/predict_revenue" method="post">
+
+        <div class="field">
+            <label>Budget</label>
+            <input type="text" name="budget">
+        </div>
+        <div class="field">
+            <label>Production Country</label>
+            <select class="ui selection dropdown" name="Country">
+                <option value="">Not Selected</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Canada">Canada</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="India">India</option>
+                <option value="Italy">Italy</option>
+                <option value="Japan">Japan</option>
+                <option value="Mexcio">Mexcio</option>
+                <option value="Russia">Russia</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States of America">United States of America</option>
+            </select>
+        </div>
+        
+        <div class="field">
+            <label>Original Language</label>
+            <select class="ui selection dropdown" name="Language">
+                <option value="">Not Selected</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="hi">Hindi</option>
+                <option value="it">Italian</option>
+                <option value="ja">Japanese</option>
+                <option value="ru">Russian</option>
+                <option value="es">Spanish</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Genre</label>
+            <select class="ui selection dropdown" name="Genre">
+                <option value="">Not Selected</option>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Animation">Animation</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Crime">Crime</option>
+                <option value="Documentary">Documentary</option>
+                <option value="Drama">Drama</option>
+                <option value="Family">Family</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Foreign">Foreign</option>
+                <option value="History">History</option>
+                <option value="Horror">Horror</option>
+                <option value="Music">Music</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Romance">Romance</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Science_Fiction">Science Fiction</option>
+                <option value="Thriller">Thriller</option>
+                <option value="War">War</option>
+                <option value="Western">Western</option>
+            </select>
+        </div>
+
+        <button class="ui button" type="submit">Submit</button>
+    </form>
+
+</div>
+
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="#">CEDB 1260 - BIG DATA ANALYTICS</a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
